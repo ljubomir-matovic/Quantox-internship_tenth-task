@@ -1,13 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+:root {
+    --purple: #7c5dfa;
+    --light-purple: #9277ff;
+    --dark-blue: #1e2139;
+    --d-blue: #252945;
+    --gray: #dfe3fa;
+    --p-purple: #888eb0;
+    --pp-purple: #7e88c3;
+    --black: #0c0e16;
+    --red: #ec5757;
+    --light-red: #ff9797;
+    --light-bg: #f8f8fb;
+    --dark: #141625;
+    --white: #fff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Spartan", sans-serif;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+}
+.smaller {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: -0.229167px;
+}
+h1 {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: -0.625px;
+    font-weight: 700;
+}
+h3 {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+    font-weight: 700;
+}
+h3.smaller {
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    font-weight: 700;
+}
+button {
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    padding-top: 17px;
+    padding-bottom: 16px;
+}
+.light button.button1 {
+    color: var(--p-purple);
+    background-color: #373b53;
+}
+.dark button.button1 {
+    color: var(--gray);
+    background-color: #373b53;
+}
+.light button.button1:hover {
+    background-color: var(--black);
+}
+.dark button.button1:hover {
+    background-color: var(--dark-blue);
+}
+button.delete {
+    color: var(--white);
+    background-color: var(--red);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button.delete:hover {
+    background-color: var(--light-red);
 }
