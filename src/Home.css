@@ -12,6 +12,9 @@
     border-width: 1px;
 }
 .status {
+    width:104px;
+    height:40px;
+    font-weight:700;
     display: flex;
     justify-content: center;
     align-items: center;
