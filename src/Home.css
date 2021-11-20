@@ -1,0 +1,62 @@
+.home-container {
+    display: flex;
+}
+.invoice-short {
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+    border-radius: 8px;
+    border: 0 solid var(--purple);
+    background-color: var(--invoice-bg);
+}
+.invoice-short:hover {
+    cursor: pointer;
+    border-width: 1px;
+}
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+}
+.small-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+/*Desktop*/
+@media screen and (min-width: 1000px) {
+    .home-container {
+        flex-direction: column;
+        gap: 65px;
+    }
+    .home-container > * {
+        width: 700px;
+        align-self: center;
+    }
+    header {
+        margin-top: 72px;
+    }
+    main {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        margin-bottom: 72px;
+    }
+    .invoice-short {
+        padding: 28px 32px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+    .right-side {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+    .right-side > section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

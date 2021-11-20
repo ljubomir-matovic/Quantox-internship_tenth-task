@@ -1,9 +1,9 @@
 import React from "react";
-function Error404() {
+function PageNotFound() {
     return (
         <section>
             <h1 className="error">Error. Page not found.</h1>
         </section>
     );
 }
-export default Error404;
+export default PageNotFound;
