@@ -6,7 +6,7 @@ function Status({ title }) {
                 <section
                     className="status"
                     style={{
-                        backgroundColor: "rgba(51, 214, 159, 0.6)",
+                        backgroundColor: "rgba(51, 214, 159, 0.06)",
                         color: "rgb(51, 214, 159)",
                     }}
                 >
@@ -23,7 +23,7 @@ function Status({ title }) {
                 <section
                     className="status"
                     style={{
-                        backgroundColor: "rgba(255, 143, 0, 0.6)",
+                        backgroundColor: "rgba(255, 143, 0, 0.06)",
                         color: "rgba(255, 143, 0, 1)",
                     }}
                 >
@@ -40,7 +40,7 @@ function Status({ title }) {
                 <section
                     className="status"
                     style={{
-                        backgroundColor: "rgba(55, 59, 83, 0.6)",
+                        backgroundColor: "rgba(55, 59, 83, 0.06)",
                         color: "rgba(55, 59, 83, 1)",
                     }}
                 >
