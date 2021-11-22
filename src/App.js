@@ -7,6 +7,7 @@ import Home from "pages/Home";
 import logo from "images/logo.svg";
 import * as allInvoices from "data.json";
 import { InvoiceContext } from "InvoiceContext";
+import Invoice from "components/Invoice";
 function App() {
     const [invoices, setInvoices] = useState([]);
     const [theme, setTheme] = useState(false);
@@ -43,7 +44,7 @@ function App() {
                     <Routes>
                         <Route path="/" exact element={<Home />} />
                         <Route path="/home" exact element={<Home />} />
-                        <Route path="/invoice/:id" element={<PageNotFound />} />
+                        <Route path="/invoice/:id" element={<Invoice />} />
                         <Route element={<PageNotFound />} />
                     </Routes>
                 </Router>

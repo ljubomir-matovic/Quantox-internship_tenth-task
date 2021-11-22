@@ -10,11 +10,10 @@ function Home() {
                 <section className="title">
                     <h1>Invoices</h1>
                     <p>
-                        There are
                         {invoices.length
-                            ? ` ${invoices.length} total `
-                            : " no "}
-                        invoices.
+                            ? `There are ${invoices.length} total `
+                            : " No "}
+                        invoices
                     </p>
                 </section>
             </header>
@@ -25,7 +24,17 @@ function Home() {
                     ))}
                 </main>
             ) : (
-                <img src={empty} alt="logo" />
+                <section className="empty-container">
+                <img className="illustration-empty" src={empty} alt="empty"/>
+                <h3 className="nothing-here-title">
+                    There is nothing here
+                </h3>
+                <p className="nothing-here-description">
+                    Create an invoice clickking the 
+                    <span className="new-invoice-nothing-here"> New {window.screen.width>600?"Invoice":""}</span> button
+                    and get started
+                </p>
+            </section>
             )}
         </section>
     );

@@ -26,8 +26,47 @@
     height: 8px;
     border-radius: 50%;
 }
+.client-name,.date,.dark .client-name, .dark .date{
+    color:var(--gray);
+}
+.invoice-id{
+    font-weight: 700;
+}
+
+.empty-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 242px !important;
+    text-align: center;
+}
+
+.nothing-here-title {
+
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.63px;
+    margin-bottom: 10px;
+}
+
+.nothing-here-description {
+
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.25px;
+    color: var(--p-purple);
+    line-height: 15px;
+}
+
+
+.new-invoice-nothing-here {
+
+    font-weight: 700;
+}
 /*Desktop*/
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 700px) {
     .home-container {
         flex-direction: column;
         gap: 65px;
@@ -46,7 +85,7 @@
         margin-bottom: 72px;
     }
     .invoice-short {
-        padding: 28px 32px;
+        padding: 28px 30px;
         display: flex;
         gap: 40px;
         align-items: center;
@@ -62,4 +101,65 @@
         justify-content: center;
         align-items: center;
     }
+    .invoice-id{
+        width:60px;
+    }
+    .date{
+        width:110px;
+    }
+}
+/*Tablet*/
+@media screen and (min-width:600px) and (max-width:999px) {
+    .home-container {
+        flex-direction: column;
+        gap: 65px;
+    }
+    .home-container > * {
+        width: 85%;
+        align-self: center;
+        flex-grow: 1;
+    }
+    header {
+        margin-top: 72px;
+    }
+    main {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        margin-bottom: 72px;
+    }
+    .invoice-short {
+        height: 72px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+    .right-side {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+}
+/*Mobile*/
+@media screen and (max-width:599px) {
+    .home-container {
+        flex-direction: column;
+        gap: 65px;
+    }
+    .home-container > * {
+        width: 85%;
+        align-self: center;
+        flex-grow: 1;
+    }
+    header {
+        margin-top: 72px;
+    }
+    main {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        margin-bottom: 72px;
+    }
+    
 }

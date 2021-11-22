@@ -26,7 +26,14 @@ body {
     font-size: 12px;
     line-height: 15px;
     letter-spacing: -0.25px;
+   /* display: flex;
+    justify-content: center;
+    align-items: center;*/
 }
+/*#root{
+    max-width: 1440px;
+    width:100%;
+}*/
 .smaller {
     font-weight: 500;
     font-size: 11px;
@@ -85,4 +92,9 @@ button.delete {
 
 button.delete:hover {
     background-color: var(--light-red);
+}
+.absolute-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
