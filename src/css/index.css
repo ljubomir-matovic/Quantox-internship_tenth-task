@@ -73,7 +73,7 @@ button {
 }
 .light button.button1 {
     color: var(--p-purple);
-    background-color: #373b53;
+    background: #F9FAFE;
 }
 .dark button.button1 {
     color: var(--gray);

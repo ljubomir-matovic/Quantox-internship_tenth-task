@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
-import "./Home.css";
+import "css/App.css";
+import "css/Home.css";
+import "css/Invoice.css";
 import PageNotFound from "pages/PageNotFound";
 import Home from "pages/Home";
 import logo from "images/logo.svg";
 import * as allInvoices from "data.json";
 import { InvoiceContext } from "InvoiceContext";
-import Invoice from "components/Invoice";
+import InvoiceDetailed from "components/InvoiceDetailed";
+import InvoiceShort from "components/InvoiceShort";
 function App() {
     const [invoices, setInvoices] = useState([]);
     const [theme, setTheme] = useState(false);
@@ -44,7 +46,7 @@ function App() {
                     <Routes>
                         <Route path="/" exact element={<Home />} />
                         <Route path="/home" exact element={<Home />} />
-                        <Route path="/invoice/:id" element={<Invoice />} />
+                        <Route path="/invoice/:id" element={<InvoiceShort short={false} />} />
                         <Route element={<PageNotFound />} />
                     </Routes>
                 </Router>

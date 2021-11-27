@@ -17,7 +17,6 @@ function Status({ title }) {
                     <p>Paid</p>
                 </section>
             );
-            break;
         case "pending":
             return (
                 <section
@@ -34,7 +33,6 @@ function Status({ title }) {
                     <p>Pending</p>
                 </section>
             );
-            break;
         default:
             return (
                 <section
@@ -51,7 +49,6 @@ function Status({ title }) {
                     <p>Draft</p>
                 </section>
             );
-            break;
     }
 }
 export default Status;

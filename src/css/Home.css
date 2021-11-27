@@ -96,10 +96,9 @@
         justify-content: flex-end;
         gap: 20px;
     }
-    .right-side > section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    
+    .right-side ~ section{
+        display: none;
     }
     .invoice-id{
         width:60px;
@@ -109,7 +108,7 @@
     }
 }
 /*Tablet*/
-@media screen and (min-width:600px) and (max-width:999px) {
+@media screen and (min-width:636px) and (max-width:999px) {
     .home-container {
         flex-direction: column;
         gap: 65px;
@@ -131,18 +130,22 @@
     .invoice-short {
         height: 72px;
         display: flex;
-        gap: 40px;
+        gap: 10px;
         align-items: center;
+        padding: 0 10px;
     }
     .right-side {
         flex-grow: 1;
         display: flex;
         justify-content: flex-end;
-        gap: 20px;
+        gap: 10px;
+    }
+    .right-side ~ section{
+        display: none;
     }
 }
 /*Mobile*/
-@media screen and (max-width:599px) {
+@media screen and (max-width:635px) {
     .home-container {
         flex-direction: column;
         gap: 65px;
@@ -152,14 +155,46 @@
         align-self: center;
         flex-grow: 1;
     }
+    .right-side{
+        display: none;
+    }
     header {
         margin-top: 72px;
     }
     main {
         display: flex;
-        gap: 16px;
         flex-direction: column;
+        gap: 16px;
         margin-bottom: 72px;
     }
-    
+    .invoice-short{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "id name" "date status" "total status";
+        justify-items: center;
+        height: 134px;
+        align-items: center;
+    }
+    .invoice-short .right-arrow{
+        display: none;
+    }
+    .invoice-short .client-name{
+        grid-area: name;
+    }
+    .invoice-short .invoice-id{
+        grid-area: id;
+    }
+    .invoice-short .status{
+        grid-area: status;
+    }
+    .invoice-short .date{
+        grid-area: date;
+        align-self: end;
+    }
+    .invoice-short .total-price{
+        grid-area: total;
+    }
+    .new-invoice-nothing-here span{
+        display: none;
+    }
 }
