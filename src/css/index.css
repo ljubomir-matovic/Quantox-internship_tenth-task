@@ -21,16 +21,27 @@
     --input-bg: #fff;
     --input-border: #dfe3fa;
     --l: rgb(55, 59, 83);
+
+    --items-summary-bg: var(--light-bg);
+    --invoice-summary-bg: var(--white);
+    --total-bg: var(--d-blue);
 }
 .dark {
     --light-bg: rgb(20, 22, 37);
     --invoice-row-color: rgb(30, 33, 57);
     --font-color: #fff;
-    --invoice-table: rgb(37, 41, 69);
-    --checkmark-background: rgb(20, 22, 37);
     --label-color: rgb(223, 227, 250);
     --input-bg: rgb(37, 41, 69);
     --input-border: rgb(30, 33, 57);
+    --items-summary-bg: rgb(27, 31, 58);
+    --invoice-summary-bg: var(--d-blue);
+    --total-bg: var(--black);
+}
+.dark .invoice-detailed {
+    --invoice-bg: var(--black);
+}
+.light .invoice-detailed {
+    --invoice-bg: var(--light-bg);
 }
 * {
     margin: 0;

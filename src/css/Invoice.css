@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     position: relative;
+    background-color: var(--invoice-bg);
 }
 .invoice-detailed .invoice-content {
     display: flex;
@@ -19,32 +20,39 @@
     justify-self: flex-start;
 }
 .invoice-content header {
-    display: flex;
-    background-color: var(--invoice-bg);
+    background-color: var(--invoice-summary-bg);
     border-radius: 8px;
 }
 .invoice-content .status-container {
     display: flex;
     gap: 16px;
 }
-.single-card {
-    background-color: var(--invoice-bg);
+.invoice-summary {
+    background-color: var(--invoice-summary-bg);
     border-radius: 8px;
     padding: 24px;
+}
+
+.amount-due {
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--total-bg);
+    color: var(--white);
+    border-radius: 0 0 8px 8px;
+    padding: 10px;
+}
+.amount-due > p {
+    min-width: 11em;
+}
+.amount-due > h1 {
+    text-align: right;
 }
 /*Desktop*/
 @media screen and (min-width: 1000px) {
     .invoice-detailed .invoice-content {
         width: 730px;
-    }
-    .invoice-content header {
-        padding: 20px 32px;
-        margin-top: 0;
-        justify-content: space-between;
-    }
-    .invoice-content header .navigate-buttons {
-        display: flex;
-        gap: 8px;
     }
 }
 /*Tablet*/
@@ -55,13 +63,120 @@
     .invoice-detailed .invoice-content {
         width: 90%;
     }
+    .invoice-content header {
+        display: flex;
+    }
+}
+/*Desktop and tablet*/
+@media screen and (min-width: 636px) {
+    .invoice-content header {
+        display: flex;
+        padding: 20px 32px;
+        margin-top: 0;
+        justify-content: space-between;
+    }
+    .invoice-content header .navigate-buttons {
+        display: flex;
+        gap: 8px;
+    }
+    .invoice-summary {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px 10px;
+        margin-bottom: 50px;
+    }
+    .item-properties.desktop {
+        flex-grow: 1;
+        flex-basis: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .invoice-summary :last-child {
+        flex-basis: 100%;
+    }
+
+    .items-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: var(--items-summary-bg);
+        border-radius: 8px;
+        padding: 10px 0 0;
+    }
+    .items-summary > *:not(.mobile) {
+        display: grid;
+        grid-template-columns: 40% repeat(3, 1fr);
+        padding: 0 10px;
+    }
 }
 /*Mobile*/
 @media screen and (max-width: 635px) {
     .invoice-detailed {
         width: 100%;
+        padding-top: 50px;
     }
     .invoice-detailed .invoice-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .invoice-content > * {
         width: 90%;
+    }
+    .invoice-detailed header {
+        margin: 0;
+        padding: 10px 10px;
+    }
+    .invoice-detailed header > * {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .invoice-detailed footer {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        background-color: var(--invoice-summary-bg);
+        justify-content: center;
+        padding: 10px 3px;
+    }
+    .invoice-summary {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+    .invoice-summary > * {
+        flex-basis: 100%;
+    }
+    .invoice-summary > :nth-child(3),
+    .invoice-summary > :nth-child(4) {
+        flex-basis: 40%;
+    }
+    .item-properties.mobile {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+    }
+    .item-properties.mobile > :first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .items-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: var(--items-summary-bg);
+        border-radius: 8px;
+        padding: 20px 0 0;
     }
 }
