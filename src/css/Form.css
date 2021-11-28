@@ -65,9 +65,9 @@
     margin-bottom: 10px;
 }
 
-.input-group input,
+.input-group input:not([type="checkbox"]),
 .date-payment > * > select,
-input {
+input:not([type="checkbox"]) {
     border: none;
     background-color: var(--input-bg);
     border: 1px solid var(--input-border);
@@ -262,7 +262,38 @@ input:focus {
 .item-list .bonus-text {
     display: none;
 }
-
+.add-item {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 0;
+}
+.add-item,
+.discard {
+    color: var(--p-purple);
+}
+.dark .add-item,
+.dark .discard {
+    color: var(--white);
+    background-color: var(--d-blue);
+}
+.dark .add-item:hover,
+.dark .discard:hover {
+    background-color: #141625;
+}
+.discard,
+.save-draft,
+.save {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.save {
+    color: var(--white);
+    background-color: var(--purple);
+}
+.save-draft {
+    color: var(--white);
+    background-color: #373b53;
+}
 @media (max-width: 800px) {
     .form-box-wrap {
         width: 90%;

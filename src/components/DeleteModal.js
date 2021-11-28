@@ -12,8 +12,12 @@ function DeleteModal({ show, hide, id }) {
             hide();
     }}>
         <section className="modal-del-container">
-            <button onClick={() => hide()}>close</button>
-            <button onClick={() => { d(); nav("/");}}>Delete</button>
+            <h1>Confirm Deletion</h1>
+            <p>Are you sure you want to delete invoice #{invoices[id]?.id}? This action cannot be undone.</p>
+            <section className="modal-buttons-container">
+            <button onClick={() => hide()} className="discard">close</button>
+                <button onClick={() => { d(); nav("/"); }} className="delete">Delete</button>
+                </section>
         </section>
     </section>;
 }

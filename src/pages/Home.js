@@ -2,9 +2,13 @@ import React, { useContext,useState,useEffect} from "react";
 import { InvoiceContext } from "InvoiceContext";
 import empty from "images/illustration-empty.svg";
 import Invoice from "components/Invoice";
-import { Route,Routes,Link } from "react-router-dom";
+import { useNavigate } from "react-router";
+import { Route,Routes} from "react-router-dom";
 import Form from "components/Form";
+import plus from "images/icon-plus.svg";
+import arrowDown from "images/icon-arrow-down.svg";
 function Home() {
+    const navigate = useNavigate();
     const { invoices } = useContext(InvoiceContext);
     const [filters, setFilters] = useState([true, true, true]);
     const FilterArray = (a) => (v, i) => i === a ? !v : v;
@@ -13,8 +17,8 @@ function Home() {
                 return true;
             return false;
     };
-    const [l, setl] = useState(invoices.length);
-    useEffect(() => setl(invoices.filter(Filter()).length), [filters]);
+    const [l, setl] = useState(0);
+    useEffect(() => setl(invoices.filter(Filter()).length), [filters,invoices.length]);
     return (
             <>
             <section className="home-container">
@@ -23,20 +27,22 @@ function Home() {
                         <h1>Invoices</h1>
                         <p>
                             {l
-                                ? `There are ${l} total `
+                                ? <><span className="desktop">There are</span> {l} <span className="desktop">total </span></>
                                 : " No "}
                             invoices
                         </p>
                     </section>
+                    <section className="header-end">
                     <div className="dropdown">
-                        <button className="dropbtn">Dropdown</button>
+                            <button className="dropbtn absolute-center"><span>Filter &nbsp;</span><span className="desktop">by status</span><span><img src={arrowDown} alt="arrow-down"/></span></button>
                         <div className="dropdown-content">
-                            <section><input type="checkbox" name="draft" onChange={() => setFilters(filters.map(FilterArray(0)))} defaultChecked={true} />Draft</section>
-                            <section><input type="checkbox" name="draft" onChange={() => setFilters(filters.map(FilterArray(1)))} defaultChecked={true} />Pending</section>
-                            <section><input type="checkbox" name="draft" onChange={() => setFilters(filters.map(FilterArray(2)))} defaultChecked={true} />Paid</section>
+                            <section className="dropdown-item"><input type="checkbox" id="draft" onChange={() => setFilters(filters.map(FilterArray(0)))} defaultChecked={true} /><label htmlFor="draft">Draft</label></section>
+                            <section className="dropdown-item"><input type="checkbox" id="pending" onChange={() => setFilters(filters.map(FilterArray(1)))} defaultChecked={true} /><label htmlFor="pending">Pending</label></section>
+                            <section className="dropdown-item"><input type="checkbox" id="paid" onChange={() => setFilters(filters.map(FilterArray(2)))} defaultChecked={true} /><label htmlFor="paid">Paid</label></section>
                             </div>
                         </div>
-                    <Link to="/new-invoice"><button>New <span className="desktop">Invoice</span></button></Link>
+                    <button onClick={()=>navigate("/new-invoice")}className="new-invoice absolute-center"><section className="plus absolute-center"><img src={plus} alt={plus}/></section>New <span className="desktop"> Invoice</span></button>
+                    </section>
                 </header>
                 {invoices.length ? (
                     <main>

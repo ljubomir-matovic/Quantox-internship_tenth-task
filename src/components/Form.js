@@ -262,20 +262,20 @@ function Form(props) {
 
         <div className="form-bottom-btns">
           <div>
-            {props.type === 'editInvoice' ? '' : <button className="btn btn-discard" onClick={() => closeForm()} >
+            {props.type === 'editInvoice' ? '' : <button className="discard" onClick={() => closeForm()} >
               <h5>Discard</h5>
             </button>}
             
           </div>
           <div>
-            {props.type === 'editInvoice' ? <button className="btn btn-discard" onClick={() => closeForm()} >
+            {props.type === 'editInvoice' ? <button className="discard" onClick={() => closeForm()} >
               <h5>Cancel</h5>
-            </button> : <button className="btn btn-save-draft" onClick={() => saveForm('draft', 'addInvoice')} >
+            </button> : <button className="save-draft" onClick={() => saveForm('draft', 'addInvoice')} >
               <h5>Save as Draft</h5>
             </button>}
-            {props.type === 'editInvoice' ? <button className="btn btn-2 btn-save" onClick={() => saveForm('save', 'changeInvoice')} >
+            {props.type === 'editInvoice' ? <button className="save" onClick={() => saveForm('save', 'changeInvoice')} >
               <h5>Save Changes</h5>
-            </button> : <button className="btn btn-2 btn-save" onClick={() => saveForm('save', 'addInvoice')} >
+            </button> : <button className="save" onClick={() => saveForm('save', 'addInvoice')} >
               <h5>Save &#38; Send</h5>
             </button>}
             

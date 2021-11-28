@@ -1,12 +1,42 @@
-.modal-del-overlay {
-    width: 100%;
-    height: 100vh;
+.modal-del-overlay:not(.hide) {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100vh;
     z-index: 100;
     background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .modal-del-container {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+    border-radius: 8px;
+    background-color: var(--invoice-bg);
+    padding: 20px;
+}
+.modal-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+.dark .modal-del-container {
+    background-color: var(--black);
+}
+/*Desktop*/
+@media screen and (min-width: 1000px) {
+    .modal-del-container {
+        width: 400px;
+    }
+}
+/*Desktop*/
+@media screen and (min-width: 636px) and (max-width: 999px) {
+    .modal-del-container {
+        width: 80%;
+    }
 }

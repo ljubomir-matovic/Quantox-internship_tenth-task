@@ -70,6 +70,9 @@
 .sidebar-footer {
     display: flex;
 }
+.home-container header {
+    display: flex;
+}
 /*Desktop*/
 @media screen and (min-width: 1000px) {
     .app-container > :nth-child(2) {
@@ -109,9 +112,16 @@
     .logo {
         width: 40px;
     }
+    input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+    }
 }
 /*Tablet and mobile*/
 @media screen and (max-width: 999px) {
+    h1 {
+        font-size: 20px;
+    }
     .app-container > :nth-child(2) {
         flex-grow: 1;
         margin-top: 80px;
@@ -149,5 +159,9 @@
     }
     .logo {
         width: 30px;
+    }
+    input[type="checkbox"] {
+        width: 12px;
+        height: 12px;
     }
 }

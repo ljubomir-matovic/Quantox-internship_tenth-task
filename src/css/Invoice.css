@@ -20,10 +20,17 @@
 }
 .invoice-content header {
     display: flex;
+    background-color: var(--invoice-bg);
+    border-radius: 8px;
 }
 .invoice-content .status-container {
     display: flex;
     gap: 16px;
+}
+.single-card {
+    background-color: var(--invoice-bg);
+    border-radius: 8px;
+    padding: 24px;
 }
 /*Desktop*/
 @media screen and (min-width: 1000px) {
@@ -42,4 +49,19 @@
 }
 /*Tablet*/
 @media screen and (min-width: 636px) and (max-width: 999px) {
+    .invoice-detailed {
+        width: 100%;
+    }
+    .invoice-detailed .invoice-content {
+        width: 90%;
+    }
+}
+/*Mobile*/
+@media screen and (max-width: 635px) {
+    .invoice-detailed {
+        width: 100%;
+    }
+    .invoice-detailed .invoice-content {
+        width: 90%;
+    }
 }
