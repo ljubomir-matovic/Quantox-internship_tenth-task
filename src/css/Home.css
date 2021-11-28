@@ -106,7 +106,7 @@
         width: 110px;
     }
     .mobile {
-        display: none;
+        display: none !important;
     }
 }
 /*Tablet*/
@@ -146,7 +146,7 @@
         display: none;
     }
     .mobile {
-        display: none;
+        display: none !important;
     }
 }
 /*Mobile*/
@@ -203,6 +203,6 @@
         display: none;
     }
     .desktop {
-        display: none;
+        display: none !important;
     }
 }
