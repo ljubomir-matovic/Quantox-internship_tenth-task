@@ -1,5 +1,45 @@
 .invoice-detailed {
     padding-top: 100px;
+    width: 100vh;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.invoice-detailed .invoice-content {
     display: flex;
     flex-direction: column;
+    gap: 30px;
+}
+.go-back {
+    cursor: pointer;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+}
+.invoice-content header {
+    display: flex;
+}
+.invoice-content .status-container {
+    display: flex;
+    gap: 16px;
+}
+/*Desktop*/
+@media screen and (min-width: 1000px) {
+    .invoice-detailed .invoice-content {
+        width: 730px;
+    }
+    .invoice-content header {
+        padding: 20px 32px;
+        margin-top: 0;
+        justify-content: space-between;
+    }
+    .invoice-content header .navigate-buttons {
+        display: flex;
+        gap: 8px;
+    }
+}
+/*Tablet*/
+@media screen and (min-width: 636px) and (max-width: 999px) {
 }

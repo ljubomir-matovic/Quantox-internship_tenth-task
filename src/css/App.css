@@ -20,6 +20,7 @@
 .sidebar {
     background-color: var(--d-blue);
     display: flex;
+    z-index: 10000;
 }
 .big-square {
     background-color: var(--purple);

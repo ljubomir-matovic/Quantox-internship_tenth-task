@@ -3,13 +3,15 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "css/App.css";
 import "css/Home.css";
 import "css/Invoice.css";
+import "css/Modal.css";
+import 'css/Form.css';
 import PageNotFound from "pages/PageNotFound";
 import Home from "pages/Home";
 import logo from "images/logo.svg";
 import * as allInvoices from "data.json";
 import { InvoiceContext } from "InvoiceContext";
-import InvoiceDetailed from "components/InvoiceDetailed";
-import InvoiceShort from "components/InvoiceShort";
+import Invoice from "components/Invoice";
+import Form from "components/Form";
 function App() {
     const [invoices, setInvoices] = useState([]);
     const [theme, setTheme] = useState(false);
@@ -44,10 +46,14 @@ function App() {
             <InvoiceContext.Provider value={{ invoices, setInvoices }}>
                 <Router>
                     <Routes>
-                        <Route path="/" exact element={<Home />} />
-                        <Route path="/home" exact element={<Home />} />
-                        <Route path="/invoice/:id" element={<InvoiceShort short={false} />} />
-                        <Route element={<PageNotFound />} />
+                        <Route path="/" exact element={<Home />}>
+                            <Route path="new-invoice" element={<Form type={"newInvoice"}/>} />
+                        </Route>
+                        <Route path="/home" exact element={<Home />} >
+                            <Route path="new-invoice" element={<Form type={"newInvoice"}/>} />
+                        </Route>
+                        <Route path="/invoice/:id/*" element={<Invoice short={false} />} />
+                        <Route path="*" element={<PageNotFound />} />
                     </Routes>
                 </Router>
             </InvoiceContext.Provider>

@@ -12,9 +12,9 @@
     border-width: 1px;
 }
 .status {
-    width:104px;
-    height:40px;
-    font-weight:700;
+    width: 104px;
+    height: 40px;
+    font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,10 +26,13 @@
     height: 8px;
     border-radius: 50%;
 }
-.client-name,.date,.dark .client-name, .dark .date{
-    color:var(--gray);
+.client-name,
+.date,
+.dark .client-name,
+.dark .date {
+    color: var(--gray);
 }
-.invoice-id{
+.invoice-id {
     font-weight: 700;
 }
 
@@ -43,7 +46,6 @@
 }
 
 .nothing-here-title {
-
     margin-top: 40px;
     font-size: 20px;
     font-weight: 700;
@@ -52,7 +54,6 @@
 }
 
 .nothing-here-description {
-
     font-size: 12px;
     font-weight: 500;
     letter-spacing: -0.25px;
@@ -60,9 +61,7 @@
     line-height: 15px;
 }
 
-
 .new-invoice-nothing-here {
-
     font-weight: 700;
 }
 /*Desktop*/
@@ -96,19 +95,22 @@
         justify-content: flex-end;
         gap: 20px;
     }
-    
-    .right-side ~ section{
+
+    .right-side ~ section {
         display: none;
     }
-    .invoice-id{
-        width:60px;
+    .invoice-id {
+        width: 60px;
     }
-    .date{
-        width:110px;
+    .date {
+        width: 110px;
+    }
+    .mobile {
+        display: none;
     }
 }
 /*Tablet*/
-@media screen and (min-width:636px) and (max-width:999px) {
+@media screen and (min-width: 636px) and (max-width: 999px) {
     .home-container {
         flex-direction: column;
         gap: 65px;
@@ -140,12 +142,15 @@
         justify-content: flex-end;
         gap: 10px;
     }
-    .right-side ~ section{
+    .right-side ~ section {
+        display: none;
+    }
+    .mobile {
         display: none;
     }
 }
 /*Mobile*/
-@media screen and (max-width:635px) {
+@media screen and (max-width: 635px) {
     .home-container {
         flex-direction: column;
         gap: 65px;
@@ -155,7 +160,7 @@
         align-self: center;
         flex-grow: 1;
     }
-    .right-side{
+    .right-side {
         display: none;
     }
     header {
@@ -167,34 +172,37 @@
         gap: 16px;
         margin-bottom: 72px;
     }
-    .invoice-short{
+    .invoice-short {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "id name" "date status" "total status";
         justify-items: center;
         height: 134px;
         align-items: center;
     }
-    .invoice-short .right-arrow{
+    .invoice-short .right-arrow {
         display: none;
     }
-    .invoice-short .client-name{
+    .invoice-short .client-name {
         grid-area: name;
     }
-    .invoice-short .invoice-id{
+    .invoice-short .invoice-id {
         grid-area: id;
     }
-    .invoice-short .status{
+    .invoice-short .status {
         grid-area: status;
     }
-    .invoice-short .date{
+    .invoice-short .date {
         grid-area: date;
         align-self: end;
     }
-    .invoice-short .total-price{
+    .invoice-short .total-price {
         grid-area: total;
     }
-    .new-invoice-nothing-here span{
+    .new-invoice-nothing-here span {
+        display: none;
+    }
+    .desktop {
         display: none;
     }
 }

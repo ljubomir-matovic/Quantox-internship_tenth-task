@@ -1,28 +1,47 @@
-import React, { useContext,useState,useEffect } from "react";
+import React, { useContext,useState,useEffect} from "react";
 import { InvoiceContext } from "InvoiceContext";
 import empty from "images/illustration-empty.svg";
-import InvoiceShort from "components/InvoiceShort";
+import Invoice from "components/Invoice";
+import { Route,Routes,Link } from "react-router-dom";
+import Form from "components/Form";
 function Home() {
     const { invoices } = useContext(InvoiceContext);
-    const initialFilter=()=>(v,i)=>true;
-    const [filters, setFilters] = useState(initialFilter);
-        return (
+    const [filters, setFilters] = useState([true, true, true]);
+    const FilterArray = (a) => (v, i) => i === a ? !v : v;
+    const Filter =()=>(v, i) => {
+            if ((filters.length === 0) || (filters.every((v,i)=>!v)) || (filters[0] && v.status === "draft") || (filters[1] && v.status === "pending") || (filters[2] && v.status === "paid"))
+                return true;
+            return false;
+    };
+    const [l, setl] = useState(invoices.length);
+    useEffect(() => setl(invoices.filter(Filter()).length), [filters]);
+    return (
+            <>
             <section className="home-container">
                 <header>
                     <section className="title">
                         <h1>Invoices</h1>
                         <p>
-                            {invoices.filter(filters).length
-                                ? `There are ${invoices.length} total `
+                            {l
+                                ? `There are ${l} total `
                                 : " No "}
                             invoices
                         </p>
                     </section>
+                    <div className="dropdown">
+                        <button className="dropbtn">Dropdown</button>
+                        <div className="dropdown-content">
+                            <section><input type="checkbox" name="draft" onChange={() => setFilters(filters.map(FilterArray(0)))} defaultChecked={true} />Draft</section>
+                            <section><input type="checkbox" name="draft" onChange={() => setFilters(filters.map(FilterArray(1)))} defaultChecked={true} />Pending</section>
+                            <section><input type="checkbox" name="draft" onChange={() => setFilters(filters.map(FilterArray(2)))} defaultChecked={true} />Paid</section>
+                            </div>
+                        </div>
+                    <Link to="/new-invoice"><button>New <span className="desktop">Invoice</span></button></Link>
                 </header>
                 {invoices.length ? (
                     <main>
-                        {invoices.filter(filters).map((v, i) => (
-                            <InvoiceShort key={i} value={v} id={i} short={true}/>
+                        {invoices.filter(Filter()).map((v, i) => (
+                            <Invoice key={i} value={v} id={i} short={true}/>
                         ))}
                     </main>
                 ) : (
@@ -39,6 +58,10 @@ function Home() {
                     </section>
                 )}
             </section>
+            <Routes>
+                <Route path="new-invoice" element={<Form type={"newInvoice"} />} />
+            </Routes>
+            </>
         );
 }
 export default Home;
