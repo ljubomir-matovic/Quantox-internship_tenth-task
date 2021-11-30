@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+:root {
+    --purple: #7c5dfa;
+    --light-purple: #9277ff;
+    --dark-blue: #1e2139;
+    --d-blue: #252945;
+    --gray: #dfe3fa;
+    --p-purple: #888eb0;
+    --pp-purple: #7e88c3;
+    --black: #0c0e16;
+    --red: #ec5757;
+    --light-red: #ff9797;
+    --light-bg: #f8f8fb;
+    --dark: #141625;
+    --white: #fff;
+
+    --invoice-row-color: #fff;
+    --font-color: #000;
+    --invoice-table: rgb(248, 248, 251);
+    --label-color: rgb(126, 136, 195);
+    --input-bg: #fff;
+    --input-border: #dfe3fa;
+    --l: rgb(55, 59, 83);
+
+    --items-summary-bg: var(--light-bg);
+    --invoice-summary-bg: var(--white);
+    --total-bg: var(--d-blue);
+}
+.dark {
+    --light-bg: rgb(20, 22, 37);
+    --invoice-row-color: rgb(30, 33, 57);
+    --font-color: #fff;
+    --label-color: rgb(223, 227, 250);
+    --input-bg: rgb(37, 41, 69);
+    --input-border: rgb(30, 33, 57);
+    --items-summary-bg: rgb(27, 31, 58);
+    --invoice-summary-bg: var(--d-blue);
+    --total-bg: var(--black);
+}
+.dark .invoice-detailed {
+    --invoice-bg: var(--black);
+}
+.light .invoice-detailed {
+    --invoice-bg: var(--light-bg);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Spartan", sans-serif;
+}
+body {
+    font-weight: 500;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;*/
+}
+/*#root{
+    max-width: 1440px;
+    width:100%;
+}*/
+.smaller {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 18px;
+    letter-spacing: -0.229167px;
+}
+h1 {
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: -0.625px;
+    font-weight: 700;
+}
+h3 {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+    font-weight: 700;
+}
+h3.smaller {
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    font-weight: 700;
+}
+button {
+    border-radius: 24px;
+    border: none;
+    outline: none;
+    padding-top: 17px;
+    padding-bottom: 16px;
+    cursor: pointer;
+}
+.light button.button1 {
+    color: var(--p-purple);
+    background: #f9fafe;
+}
+.dark button.button1 {
+    color: var(--gray);
+    background-color: #373b53;
+}
+.light button.button1:hover {
+    background-color: var(--black);
+}
+.dark button.button1:hover {
+    background-color: var(--dark-blue);
+}
+button.delete {
+    color: var(--white);
+    background-color: var(--red);
+    width: 89px;
+    height: 48px;
+}
+button.delete:hover {
+    background-color: var(--light-red);
+}
+button.mark-as-paid {
+    width: 131px;
+    height: 48px;
+    background-color: var(--purple);
+    color: var(--white);
+}
+button.edit-button {
+    width: 73px;
+    height: 48px;
+}
+.absolute-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide {
+    display: none;
+}
+header .header-end {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+.new-invoice {
+    gap: 5px;
+    padding: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--purple);
+}
+.new-invoice .plus {
+    background-color: var(--white);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.dropbtn {
+    background-color: var(--backgroud-color);
+    color: var(--font-color);
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--invoice-bg);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown .dropbtn img {
+    margin-left: 10px;
+    transform: rotate(0deg);
+    transition: all ease 0.5s;
+}
+.dropdown:hover .dropbtn img {
+    transform: rotate(180deg);
+    transition: all ease 0.5s;
+}
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+input[type="checkbox"],
+input[type="checkbox"]:focus {
+    appearance: none;
+    border: 2px solid var(--gray);
+}
+.dropdown-item:hover label {
+    color: var(--purple);
+}
+.dropdown-item:hover input[type="checkbox"] {
+    border-color: var(--purple);
+}
+input[type="checkbox"]:checked {
+    background: url("images/icon-check.svg") center no-repeat, var(--purple);
+    border-color: var(--purple);
+}
