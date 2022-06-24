@@ -22,7 +22,7 @@ function App() {
         } else {
             //setInvoices(allInvoices.default);
             let response=await fetch("data.json");
-            if(!res.ok)return;
+            if(!response.ok)return;
             let responseBody=await response.json();
             setInvoices(responseBody);
         }
