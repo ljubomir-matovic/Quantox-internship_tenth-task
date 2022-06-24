@@ -15,12 +15,16 @@ import Form from "components/Form";
 function App() {
     const [invoices, setInvoices] = useState([]);
     const [theme, setTheme] = useState(false);
-    useEffect(() => {
+    useEffect(async() => {
         let data = localStorage.getItem("invoices");
         if (data != null) {
             setInvoices(JSON.parse(data));
         } else {
-            setInvoices(allInvoices.default);
+            //setInvoices(allInvoices.default);
+            let response=await fetch("data.json");
+            if(!res.ok)return;
+            let responseBody=await response.json();
+            setInvoices(responseBody);
         }
     }, []);
     useEffect(() => {
