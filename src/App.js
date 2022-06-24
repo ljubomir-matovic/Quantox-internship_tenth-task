@@ -17,7 +17,7 @@ function App() {
     const [theme, setTheme] = useState(false);
     useEffect(async() => {
         let data = localStorage.getItem("invoices");
-        if (data != null) {
+        if (data != null && data!=undefined) {
             setInvoices(JSON.parse(data));
         } else {
             //setInvoices(allInvoices.default);
