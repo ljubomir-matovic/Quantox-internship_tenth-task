@@ -23,10 +23,10 @@ function App() {
             //setInvoices(allInvoices.default);
             let response=await fetch("data.json");
             if(!response.ok)return;
-            console.log(response);
-            console.log((await response.text()));
+            //console.log(response);
+            //console.log((await response.text()));
             let responseBody=await response.json();
-            console.log(responseBody);
+            //console.log(responseBody);
             setInvoices(responseBody);
         }
     }, []);
