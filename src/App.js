@@ -24,6 +24,7 @@ function App() {
             let response=await fetch("data.json");
             if(!response.ok)return;
             let responseBody=await response.json();
+            console.log(responseBody);
             setInvoices(responseBody);
         }
     }, []);
